@@ -20,6 +20,8 @@ var destDir = projectDir.cwd('./build');
 var paths = {
     copyFromAppDir: [
         './node_modules/**',
+        './libs/**',
+        './assets/**',
         './helpers/**',
         './**/*.html',
         './**/*.+(jpg|png|svg)'
@@ -49,6 +51,7 @@ var bundleApplication = function () {
     return Q.all([
             bundle(srcDir.path('background.js'), destDir.path('background.js')),
             bundle(srcDir.path('app.js'), destDir.path('app.js')),
+            bundle(srcDir.path('game.js'), destDir.path('game.js')),
         ]);
 };
 
